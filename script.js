@@ -15,21 +15,20 @@ if (menuBtn && navLinks) {
 const contactForm = document.querySelector(".contact-form");
 
 if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-
+    contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        // Get form values
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const contact = contactForm.querySelector('input[type="email"], input[type="tel"]').value;
-        const message = contactForm.querySelector("textarea").value;
+        const inputs = contactForm.querySelectorAll("input");
+        const textarea = contactForm.querySelector("textarea");
+
+        const name = inputs[0].value;
+        const contact = inputs[1].value;
+        const message = textarea.value;
 
         // Your WhatsApp number
         const whatsappNumber = "919697101516";
 
-        // WhatsApp message
-        const whatsappMessage =
-`Hello Venkyy Web Studio 👋
+        const whatsappMessage = `Hello Venkyy bhaii!!!
 
 Name: ${name}
 
@@ -38,13 +37,9 @@ Email / WhatsApp: ${contact}
 Website Requirement:
 ${message}`;
 
-        // Open WhatsApp
         const whatsappURL =
-    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-window.location.href = whatsappURL;
-
-        // Reset form
-        contactForm.reset();
+        window.location.href = whatsappURL;
     });
 }
