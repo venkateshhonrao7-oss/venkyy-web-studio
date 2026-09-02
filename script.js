@@ -1,23 +1,50 @@
-// ================= MOBILE MENU =================
+// ==================== MOBILE MENU ====================
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.querySelector(".nav-links");
 
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
 
 
-// ================= CONTACT FORM =================
+// ==================== CONTACT FORM ====================
 
 const contactForm = document.querySelector(".contact-form");
 
-contactForm.addEventListener("submit", (event) => {
+if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    alert("Thanks! I'll get back to you soon.");
+        // Get form values
+        const name = contactForm.querySelector('input[type="text"]').value;
+        const contact = contactForm.querySelector('input[type="email"], input[type="tel"]').value;
+        const message = contactForm.querySelector("textarea").value;
 
-    contactForm.reset();
+        // Your WhatsApp number
+        const whatsappNumber = "919697101516";
 
-});
+        // WhatsApp message
+        const whatsappMessage =
+`Hello Venkyy Web Studio 👋
+
+Name: ${name}
+
+Email / WhatsApp: ${contact}
+
+Website Requirement:
+${message}`;
+
+        // Open WhatsApp
+        const whatsappURL =
+            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+        window.open(whatsappURL, "_blank");
+
+        // Reset form
+        contactForm.reset();
+    });
+}
