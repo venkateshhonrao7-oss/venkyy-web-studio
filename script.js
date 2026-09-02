@@ -40,9 +40,9 @@ ${message}`;
 
         // Open WhatsApp
         const whatsappURL =
-            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-        window.open(whatsappURL, "_blank");
+window.location.href = whatsappURL;
 
         // Reset form
         contactForm.reset();
