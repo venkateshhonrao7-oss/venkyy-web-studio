@@ -26,7 +26,7 @@ if (contactForm) {
         const message = textarea.value;
 
         // Your WhatsApp number
-        const whatsappNumber = "919697101516";
+        const whatsappNumber = "918087407886";
 
         const whatsappMessage = `Hello Venkyy bhaii!!!
 
