@@ -579,14 +579,40 @@ details p {
 
 @media (max-width: 900px) {
 
-    .nav-links,
     .nav-btn {
-        display: none;
-    }
+    display: none;
+}
 
-    .menu-btn {
-        display: block;
-    }
+.menu-btn {
+    display: block;
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #07070c;
+    padding: 20px 0;
+    z-index: 1001;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 15px;
+}
+
 
     .hero,
     .about,
